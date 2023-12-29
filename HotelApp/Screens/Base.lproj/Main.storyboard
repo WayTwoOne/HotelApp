@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iHY-h0-bP0">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Отель-->
+        <scene sceneID="lGa-K4-tEO">
+            <objects>
+                <viewController storyboardIdentifier="HotelViewController" id="cLR-ko-lEN" customClass="HotelViewController" customModule="HotelApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Ii-i8-fQs">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UtD-hP-Nih">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="746"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="746" id="NYX-a3-XkY"/>
+                                    <constraint firstAttribute="width" constant="393" id="Pro-yi-dLK"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="cLR-ko-lEN" id="tg3-Hn-69s"/>
+                                    <outlet property="delegate" destination="cLR-ko-lEN" id="K3X-hE-mUe"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1L-jR-Jnu">
+                                <rect key="frame" x="25" y="770" width="343" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="m7Q-7g-hNm"/>
+                                    <constraint firstAttribute="height" constant="48" id="vAt-TM-WXS"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="К выбору номера"/>
+                                <connections>
+                                    <action selector="movingToTheRoomsButtonPressed" destination="js6-LM-fLF" eventType="touchUpInside" id="goF-J9-U95"/>
+                                    <segue destination="YFg-GH-vrO" kind="show" identifier="hotleAndRoom" id="HTB-Qx-bXt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="b9S-6b-24a"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="b9S-6b-24a" firstAttribute="trailing" secondItem="l1L-jR-Jnu" secondAttribute="trailing" constant="25" id="A5C-Qb-jQg"/>
+                            <constraint firstItem="l1L-jR-Jnu" firstAttribute="leading" secondItem="b9S-6b-24a" secondAttribute="leading" constant="25" id="Jez-OX-iyW"/>
+                            <constraint firstItem="b9S-6b-24a" firstAttribute="bottom" secondItem="l1L-jR-Jnu" secondAttribute="bottom" id="R9r-C2-MVs"/>
+                            <constraint firstItem="l1L-jR-Jnu" firstAttribute="top" secondItem="UtD-hP-Nih" secondAttribute="bottom" constant="24" id="noN-ii-Uui"/>
+                            <constraint firstItem="UtD-hP-Nih" firstAttribute="centerX" secondItem="l1L-jR-Jnu" secondAttribute="centerX" id="zov-ll-FQ9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Отель" id="Yt9-JU-aUr"/>
+                    <connections>
+                        <outlet property="hotelTableView" destination="UtD-hP-Nih" id="qmr-Eg-GRa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RIM-CV-gWU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="js6-LM-fLF" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3192" y="55"/>
+        </scene>
+        <!--Бронирование-->
+        <scene sceneID="LtV-tB-iOS">
+            <objects>
+                <tableViewController id="YFg-GH-vrO" customClass="RoomsTableViewController" customModule="HotelApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Bjc-gd-vsn">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Бронирование" style="editor" id="Dtm-7T-WjG">
+                        <barButtonItem key="leftBarButtonItem" title="&lt;" id="10p-cr-WI1">
+                            <color key="tintColor" red="0.0091000000000000004" green="0.027369999999999998" blue="0.070000000000000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="backToHotelButton:" destination="YFg-GH-vrO" id="U4D-8h-h1g"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backToHotelButton" destination="10p-cr-WI1" id="RgO-LI-qmv"/>
+                        <outlet property="hotelNameNavigationTitle" destination="Dtm-7T-WjG" id="tNN-Hd-ipc"/>
+                        <outlet property="roomTableView" destination="Bjc-gd-vsn" id="jbZ-f1-OU5"/>
+                        <segue destination="WU3-gC-p0n" kind="show" identifier="toBooking" id="gu3-i3-4FZ"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zqZ-Cq-ImP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4039" y="55"/>
+        </scene>
+        <!--Бронирование-->
+        <scene sceneID="72R-3q-H0s">
+            <objects>
+                <viewController id="WU3-gC-p0n" customClass="BookingViewController" customModule="HotelApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZOI-wH-2nF">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xNY-Pa-d9L">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="762"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yzb-GN-GFJ">
+                                <rect key="frame" x="16" y="770" width="361" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="361" id="6Qd-nZ-cL6"/>
+                                    <constraint firstAttribute="height" constant="48" id="t0O-Rn-HB9"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <action selector="moveToFinalVCButtonPressed" destination="WU3-gC-p0n" eventType="touchUpInside" id="eLP-S4-k9O"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dbt-6i-vA8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xNY-Pa-d9L" firstAttribute="top" secondItem="ZOI-wH-2nF" secondAttribute="top" id="BmB-SS-SNx"/>
+                            <constraint firstItem="Yzb-GN-GFJ" firstAttribute="leading" secondItem="dbt-6i-vA8" secondAttribute="leading" constant="16" id="FXU-2J-dha"/>
+                            <constraint firstItem="dbt-6i-vA8" firstAttribute="trailing" secondItem="Yzb-GN-GFJ" secondAttribute="trailing" constant="16" id="Tmj-Cj-Q5J"/>
+                            <constraint firstItem="dbt-6i-vA8" firstAttribute="bottom" secondItem="Yzb-GN-GFJ" secondAttribute="bottom" id="blf-lU-Lfb"/>
+                            <constraint firstItem="Yzb-GN-GFJ" firstAttribute="top" secondItem="xNY-Pa-d9L" secondAttribute="bottom" constant="8" symbolic="YES" id="ofc-Jv-g7k"/>
+                            <constraint firstItem="xNY-Pa-d9L" firstAttribute="trailing" secondItem="dbt-6i-vA8" secondAttribute="trailing" id="rmV-bB-FRq"/>
+                            <constraint firstItem="xNY-Pa-d9L" firstAttribute="leading" secondItem="dbt-6i-vA8" secondAttribute="leading" id="yQa-JV-bBD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Бронирование" id="J1e-ph-b2A">
+                        <barButtonItem key="leftBarButtonItem" title="&lt;" id="9TX-ly-nhT">
+                            <color key="tintColor" red="0.0091000000000000004" green="0.027369999999999998" blue="0.070000000000000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bookingTableView" destination="xNY-Pa-d9L" id="fjV-yu-s1N"/>
+                        <segue destination="R3M-5H-d8S" kind="show" identifier="toFinalViewController" id="C6t-fb-Ijh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Emf-bF-rsU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4870.9923664122134" y="62.676056338028175"/>
+        </scene>
+        <!--Заказ оплачен-->
+        <scene sceneID="eKA-uM-zXm">
+            <objects>
+                <viewController id="R3M-5H-d8S" customClass="FinalViewController" customModule="HotelApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yst-om-Mr6">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OHL-kC-Xdy">
+                                <rect key="frame" x="149" y="224" width="94" height="94"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="🎉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dkq-jk-GtL">
+                                        <rect key="frame" x="25" y="25" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.90521072247706424" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ваш заказ принят в работу" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GET-zV-QEm">
+                                <rect key="frame" x="16" y="343" width="361" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="361" id="Lnk-o4-6BR"/>
+                                    <constraint firstAttribute="height" constant="31" id="ogr-Sk-OZB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fa8-9q-rji">
+                                <rect key="frame" x="16" y="770" width="361" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="8EM-qz-wEm"/>
+                                    <constraint firstAttribute="width" constant="361" id="D6O-9S-FUM"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Супер!"/>
+                                <connections>
+                                    <action selector="toStartButtonPressed" destination="R3M-5H-d8S" eventType="touchUpInside" id="cie-Lv-3Ny"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHq-bl-em2">
+                                <rect key="frame" x="16" y="405" width="361" height="95"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="361" id="mj3-cn-tSy"/>
+                                    <constraint firstAttribute="height" constant="95" id="qKj-w9-1RA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BEd-tQ-Krl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GET-zV-QEm" firstAttribute="top" secondItem="OHL-kC-Xdy" secondAttribute="bottom" constant="25" id="4v6-Kp-lLF"/>
+                            <constraint firstItem="BEd-tQ-Krl" firstAttribute="trailing" secondItem="OHL-kC-Xdy" secondAttribute="trailing" constant="150" id="8ef-iE-VxZ"/>
+                            <constraint firstItem="BEd-tQ-Krl" firstAttribute="trailing" secondItem="fa8-9q-rji" secondAttribute="trailing" constant="16" id="CY2-uC-UiD"/>
+                            <constraint firstItem="BEd-tQ-Krl" firstAttribute="bottom" secondItem="YHq-bl-em2" secondAttribute="bottom" constant="318" id="E0O-OE-rP1"/>
+                            <constraint firstItem="fa8-9q-rji" firstAttribute="bottom" secondItem="BEd-tQ-Krl" secondAttribute="bottom" id="KF0-oE-SdG"/>
+                            <constraint firstItem="YHq-bl-em2" firstAttribute="leading" secondItem="BEd-tQ-Krl" secondAttribute="leading" constant="16" id="eu6-Cb-3cD"/>
+                            <constraint firstItem="BEd-tQ-Krl" firstAttribute="trailing" secondItem="GET-zV-QEm" secondAttribute="trailing" constant="16" id="g8l-2O-m5F"/>
+                            <constraint firstItem="OHL-kC-Xdy" firstAttribute="top" secondItem="BEd-tQ-Krl" secondAttribute="top" constant="121" id="h5E-wm-edc"/>
+                            <constraint firstItem="BEd-tQ-Krl" firstAttribute="trailing" secondItem="YHq-bl-em2" secondAttribute="trailing" constant="16" id="h6R-7g-mch"/>
+                            <constraint firstItem="OHL-kC-Xdy" firstAttribute="leading" secondItem="BEd-tQ-Krl" secondAttribute="leading" constant="149" id="hNj-x7-Ri4"/>
+                            <constraint firstItem="fa8-9q-rji" firstAttribute="leading" secondItem="BEd-tQ-Krl" secondAttribute="leading" constant="16" id="kSM-4y-FKV"/>
+                            <constraint firstItem="YHq-bl-em2" firstAttribute="top" secondItem="GET-zV-QEm" secondAttribute="bottom" constant="31" id="rIy-jl-N9x"/>
+                            <constraint firstItem="GET-zV-QEm" firstAttribute="leading" secondItem="BEd-tQ-Krl" secondAttribute="leading" constant="16" id="vVF-rW-pC1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Заказ оплачен" id="Otu-F2-ig1">
+                        <barButtonItem key="leftBarButtonItem" title="&lt;" id="q6M-6C-lOl">
+                            <color key="tintColor" red="0.0091000000000000004" green="0.027369999999999998" blue="0.070000000000000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="aroundView" destination="OHL-kC-Xdy" id="FCf-5J-z5w"/>
+                        <outlet property="orderConfirmationLabel" destination="YHq-bl-em2" id="ylq-U4-K6y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O8Z-W6-yqQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5633" y="63"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nn5-CE-uAS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iHY-h0-bP0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="deS-sO-afS">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cLR-ko-lEN" kind="relationship" relationship="rootViewController" id="3WW-2q-Uam"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nIo-ZE-YnK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2344.2748091603053" y="54.929577464788736"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
